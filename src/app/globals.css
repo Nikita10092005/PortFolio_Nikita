@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-ink dark:bg-dark-bg dark:text-dark-ink;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-accent text-white;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #b8860b;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 639px) {
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    @apply absolute -left-[9999px] top-0 z-[1000] bg-ink text-bg dark:bg-dark-ink dark:text-dark-bg px-5 py-3 font-mono text-sm;
+  }
+  .skip-link:focus {
+    @apply left-4 top-4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
