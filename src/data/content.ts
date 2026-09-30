@@ -115,7 +115,7 @@ export const projects: ProjectItem[] = [
     tags: ["React.js", "Full Stack"],
     links: [
       { label: "GitHub", href: "https://github.com/Nikita10092005/OneCart.com-frontend" },
-      { label: "Live Demo — Pending", href: null },
+      { label: "Live Demo", href: "https://onecart-com.onrender.com" },
     ],
   },
   {
